@@ -1,8 +1,8 @@
 {
-  "name": "mmm-template",
+  "name": "mmm-bustimesoba",
   "version": "1.0.0",
   "description": "[Module description]",
-  "main": "MMM-Template.js",
+  "main": "MMM-BusTimesOBA.js",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -10,21 +10,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+[GitHub url].git"
+    "url": "git+https://github.com/palbee/MMM-BusTimesOBA.git"
   },
   "keywords": [
     "template"
   ],
-  "author": "[Author]",
+  "author": "PAlbee",
   "license": "MIT",
   "bugs": {
-    "url": "[GitHub url]/issues"
+    "url": "https://github.com/palbee/MMM-BusTimesOBA/issues"
   },
-  "homepage": "[GitHub url]#readme",
+  "homepage": "https://github.com/palbee/MMM-BusTimesOBA#readme",
   "devDependencies": {
     "@eslint/js": "^9.10.0",
     "@stylistic/eslint-plugin": "^2.7.2",
     "eslint": "^9.10.0",
     "globals": "^15.9.0"
+  },
+  "dependencies": {
+    "onebusaway-sdk": "^1.6.8"
   }
 }

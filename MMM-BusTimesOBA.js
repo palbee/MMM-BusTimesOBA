@@ -1,20 +1,25 @@
-Module.register("MMM-Template", {
+// import Module from "node:module"
+
+Module.register("MMM-BusTimesOBA", {
 
   defaults: {
+    api_key: "TEST",
+    stops: [],
     exampleContent: ""
   },
 
   /**
-   * Apply the default styles.
-   */
+     * Apply the default styles.
+     */
   getStyles() {
-    return ["template.css"]
+    return ["bustimesoba.css"]
   },
 
   /**
-   * Pseudo-constructor for our module. Initialize stuff here.
-   */
+     * Pseudo-constructor for our module. Initialize stuff here.
+     */
   start() {
+    Log.log("Starting module: " + this.name)
     this.templateContent = this.config.exampleContent
 
     // set timeout for next random text
@@ -22,12 +27,12 @@ Module.register("MMM-Template", {
   },
 
   /**
-   * Handle notifications received by the node helper.
-   * So we can communicate between the node helper and the module.
-   *
-   * @param {string} notification - The notification identifier.
-   * @param {any} payload - The payload data`returned by the node helper.
-   */
+     * Handle notifications received by the node helper.
+     * So we can communicate between the node helper and the module.
+     *
+     * @param {string} notification - The notification identifier.
+     * @param {any} payload - The payload data`returned by the node helper.
+     */
   socketNotificationReceived: function (notification, payload) {
     if (notification === "EXAMPLE_NOTIFICATION") {
       this.templateContent = `${this.config.exampleContent} ${payload.text}`
@@ -36,8 +41,8 @@ Module.register("MMM-Template", {
   },
 
   /**
-   * Render the page we're on.
-   */
+     * Render the page we're on.
+     */
   getDom() {
     const wrapper = document.createElement("div")
     wrapper.innerHTML = `<b>Title</b><br />${this.templateContent}`
@@ -50,11 +55,11 @@ Module.register("MMM-Template", {
   },
 
   /**
-   * This is the place to receive notifications from other modules or the system.
-   *
-   * @param {string} notification The notification ID, it is preferred that it prefixes your module name
-   * @param {number} payload the payload type.
-   */
+     * This is the place to receive notifications from other modules or the system.
+     *
+     * @param {string} notification The notification ID, it is preferred that it prefixes your module name
+     * @param {number} payload the payload type.
+     */
   notificationReceived(notification, payload) {
     if (notification === "TEMPLATE_RANDOM_TEXT") {
       this.templateContent = `${this.config.exampleContent} ${payload}`
