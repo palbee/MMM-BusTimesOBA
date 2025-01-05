@@ -25,6 +25,5 @@ module.exports = NodeHelper.create({
       const randomText = Array.from({ length: amountCharacters }, () => String.fromCharCode(Math.floor(Math.random() * 26) + 97)).join("")
       this.sendSocketNotification("EXAMPLE_NOTIFICATION", { text: randomText })
     }
-
   },
 })
