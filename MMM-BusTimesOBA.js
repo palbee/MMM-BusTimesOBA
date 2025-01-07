@@ -8,9 +8,9 @@ Module.register("MMM-BusTimesOBA", {
   },
 
   /**
-     * Apply the default styles.
-     */
-  getStyles() {
+   * Apply the default styles.
+   */
+  getStyles: function () {
     return ["bustimesoba.css"]
   },
 
@@ -97,17 +97,14 @@ Module.register("MMM-BusTimesOBA", {
     this.sendSocketNotification("ARRIVAL_AND_DEPARTURE", {})
   },
 
-  addRandomText() {
-    this.sendSocketNotification("GET_RANDOM_TEXT", { amountCharacters: 15 })
-  },
-
   /**
-     * This is the place to receive notifications from other modules or the system.
-     *
-     * @param {string} notification The notification ID, it is preferred that it prefixes your module name
-     * @param {number} payload the payload type.
-     */
-  notificationReceived(notification, payload) {
+   * This is the place to receive notifications from other modules or the system.
+   *
+   * @param {string} notification The notification ID, it is preferred that it prefixes your module name
+   * @param {number} payload the payload type.
+   */
+  notificationReceived: function (notification, payload) {
+    Log.log(`Notification Received: ${notification}, payload: ${payload}`)
     // if (notification === "TEMPLATE_RANDOM_TEXT") {
     //   this.templateContent = `${this.config.exampleContent} ${payload}`
     //   this.updateDom()

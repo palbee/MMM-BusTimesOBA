@@ -28,6 +28,7 @@
     "globals": "^15.9.0"
   },
   "dependencies": {
+    "nunjucks": "^3.2.4",
     "onebusaway-sdk": "^1.6.8"
   }
 }
